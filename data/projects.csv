@@ -1,0 +1,26 @@
+ProjectID,Name,Type,LocationType,LuxuryLevel,TotalFloorArea_m2,NumberOfFloors,NumberOfBasements,FoundationType,StructureType,DurationDays,ContractType,StartYear,SeasonStart,AccessCondition
+P001,Project 1,High-rise,Downtown,Luxury,9312,16,0,Shallow,Precast,224,Lump Sum,2024,Rainy,Tight
+P002,Project 2,High-rise,Downtown,Luxury,14148,22,1,Shallow,RC,464,Lump Sum,2020,Rainy,Tight
+P003,Project 3,Factory,Urban,Luxury,6600,1,0,Pile,RC,416,Lump Sum,2021,Dry,Medium
+P004,Project 4,Factory,Suburban,Standard,5654,4,1,Raft,Precast,824,Lump Sum,2022,Dry,Tight
+P005,Project 5,Home,Downtown,Premium,4875,2,2,Pile,Precast,389,Unit Price,2024,Rainy,Medium
+P006,Project 6,Home,Suburban,Premium,17638,3,2,Shallow,Precast,858,Lump Sum,2024,Rainy,Open
+P007,Project 7,High-rise,Suburban,Premium,16935,39,0,Shallow,Steel,900,Lump Sum,2024,Dry,Open
+P008,Project 8,High-rise,Suburban,Premium,2567,35,0,Shallow,Precast,606,Lump Sum,2022,Rainy,Tight
+P009,Project 9,Low-rise,Downtown,Standard,11378,1,2,Pile,RC,722,Lump Sum,2020,Dry,Open
+P010,Project 10,Factory,Downtown,Luxury,19011,5,1,Shallow,Steel,536,Lump Sum,2020,Dry,Open
+P011,Project 11,High-rise,Downtown,Standard,6532,35,1,Shallow,Steel,307,Unit Price,2023,Dry,Tight
+P012,Project 12,Home,Urban,Standard,13441,1,0,Raft,RC,519,Unit Price,2023,Rainy,Medium
+P013,Project 13,Factory,Downtown,Luxury,10576,1,0,Pile,Steel,634,Lump Sum,2020,Dry,Tight
+P014,Project 14,Factory,Suburban,Luxury,10666,3,0,Pile,Precast,441,Lump Sum,2022,Rainy,Tight
+P015,Project 15,High-rise,Suburban,Standard,16876,17,0,Raft,RC,370,Unit Price,2022,Dry,Medium
+P016,Project 16,High-rise,Suburban,Luxury,5393,18,1,Pile,RC,854,Unit Price,2021,Rainy,Open
+P017,Project 17,Low-rise,Suburban,Premium,5594,4,2,Pile,Steel,694,Lump Sum,2020,Dry,Open
+P018,Project 18,High-rise,Urban,Standard,8476,7,1,Pile,Steel,755,Lump Sum,2021,Dry,Tight
+P019,Project 19,High-rise,Urban,Standard,15723,15,0,Raft,Steel,432,Lump Sum,2021,Dry,Open
+P020,Project 20,Factory,Urban,Standard,4079,3,0,Pile,Steel,159,Lump Sum,2024,Rainy,Medium
+P021,Project 21,Factory,Suburban,Luxury,6756,3,1,Shallow,Precast,458,Unit Price,2020,Rainy,Open
+P022,Project 22,Low-rise,Suburban,Luxury,10161,4,2,Shallow,Steel,413,Lump Sum,2023,Rainy,Medium
+P023,Project 23,Factory,Urban,Standard,7996,3,0,Shallow,RC,145,Lump Sum,2021,Rainy,Open
+P024,Project 24,High-rise,Downtown,Premium,7470,12,2,Pile,Steel,171,Lump Sum,2020,Rainy,Tight
+P025,Project 25,Home,Suburban,Premium,5515,4,1,Raft,RC,772,Unit Price,2024,Rainy,Open

@@ -1,0 +1,26 @@
+ProjectID,Name,Type,LocationType,LuxuryLevel,TotalFloorArea_m2,NumberOfFloors,NumberOfBasements,FoundationType,StructureType,DurationDays,ContractType,StartYear,SeasonStart,AccessCondition,StaffQty,LaborQty,Concrete_m3,Rebar_kg,Formwork_m2,CraneRent_Days,ExcavatorRent_Days,TotalMachineRentCost_THB,TotalCost_THB,UnitCostPer_m2_THB,DelayDays,EOT_Days,ProfitMargin_%
+P001,Project 1,High-rise,Downtown,Luxury,9312,16,0,Shallow,Precast,224,Lump Sum,2024,Rainy,Tight,3,67,2473,173374,2966,50,91,2365000,155938752,16746.0,0,15,10.9
+P002,Project 2,High-rise,Downtown,Luxury,14148,22,1,Shallow,RC,464,Lump Sum,2020,Rainy,Tight,14,453,4289,280030,4674,117,68,3360000,100309320,7090.0,30,30,10.5
+P003,Project 3,Factory,Urban,Luxury,6600,1,0,Pile,RC,416,Lump Sum,2021,Dry,Medium,11,252,2578,173490,3690,53,85,2335000,77536800,11748.0,0,30,11.3
+P004,Project 4,Factory,Suburban,Standard,5654,4,1,Raft,Precast,824,Lump Sum,2022,Dry,Tight,4,432,1665,108815,2531,145,112,4580000,75260394,13311.0,0,30,10.0
+P005,Project 5,Home,Downtown,Premium,4875,2,2,Pile,Precast,389,Unit Price,2024,Rainy,Medium,10,90,1720,106327,1623,28,19,845000,40179750,8242.0,30,60,5.6
+P006,Project 6,Home,Suburban,Premium,17638,3,2,Shallow,Precast,858,Lump Sum,2024,Rainy,Open,13,77,5080,320868,5331,184,112,5360000,205129940,11630.0,45,45,10.1
+P007,Project 7,High-rise,Suburban,Premium,16935,39,0,Shallow,Steel,900,Lump Sum,2024,Dry,Open,13,270,3485,273858,15497,78,30,2010000,82947630,4898.0,0,30,14.5
+P008,Project 8,High-rise,Suburban,Premium,2567,35,0,Shallow,Precast,606,Lump Sum,2022,Rainy,Tight,20,406,1075,68824,1330,171,83,4665000,39110812,15236.0,30,60,9.5
+P009,Project 9,Low-rise,Downtown,Standard,11378,1,2,Pile,RC,722,Lump Sum,2020,Dry,Open,23,50,3057,238777,10260,18,65,1335000,122859644,10798.0,15,45,9.9
+P010,Project 10,Factory,Downtown,Luxury,19011,5,1,Shallow,Steel,536,Lump Sum,2020,Dry,Open,16,201,6217,431089,15405,172,83,4685000,118324464,6224.0,0,15,12.3
+P011,Project 11,High-rise,Downtown,Standard,6532,35,1,Shallow,Steel,307,Unit Price,2023,Dry,Tight,17,433,2994,212593,2190,138,107,4365000,22750956,3483.0,0,0,6.7
+P012,Project 12,Home,Urban,Standard,13441,1,0,Raft,RC,519,Unit Price,2023,Rainy,Medium,25,394,6702,476615,10791,39,24,1140000,170996402,12722.0,0,0,10.8
+P013,Project 13,Factory,Downtown,Luxury,10576,1,0,Pile,Steel,634,Lump Sum,2020,Dry,Tight,5,324,2330,179960,6162,145,31,3365000,45497952,4302.0,45,45,9.2
+P014,Project 14,Factory,Suburban,Luxury,10666,3,0,Pile,Precast,441,Lump Sum,2022,Rainy,Tight,24,350,3093,205138,8813,18,1,375000,192169322,18017.0,45,75,15.0
+P015,Project 15,High-rise,Suburban,Standard,16876,17,0,Raft,RC,370,Unit Price,2022,Dry,Medium,20,380,4906,390895,14597,135,1,2715000,216181560,12810.0,0,0,7.6
+P016,Project 16,High-rise,Suburban,Luxury,5393,18,1,Pile,RC,854,Unit Price,2021,Rainy,Open,18,148,2543,195612,1966,108,106,3750000,65071938,12066.0,0,0,8.3
+P017,Project 17,Low-rise,Suburban,Premium,5594,4,2,Pile,Steel,694,Lump Sum,2020,Dry,Open,7,299,1179,79446,3841,110,16,2440000,24445780,4370.0,15,30,14.0
+P018,Project 18,High-rise,Urban,Standard,8476,7,1,Pile,Steel,755,Lump Sum,2021,Dry,Tight,16,32,2151,168831,7184,105,102,3630000,94346356,11131.0,15,15,12.9
+P019,Project 19,High-rise,Urban,Standard,15723,15,0,Raft,Steel,432,Lump Sum,2021,Dry,Open,9,224,4692,362630,15358,71,44,2080000,309617316,19692.0,30,60,14.8
+P020,Project 20,Factory,Urban,Standard,4079,3,0,Pile,Steel,159,Lump Sum,2024,Rainy,Medium,13,243,1557,109345,2323,147,24,3300000,46280334,11346.0,0,30,9.4
+P021,Project 21,Factory,Suburban,Luxury,6756,3,1,Shallow,Precast,458,Unit Price,2020,Rainy,Open,12,361,2178,148208,3425,32,24,1000000,113345412,16777.0,30,60,12.5
+P022,Project 22,Low-rise,Suburban,Luxury,10161,4,2,Shallow,Steel,413,Lump Sum,2023,Rainy,Medium,17,246,4091,287284,8693,188,21,4075000,58710258,5778.0,15,45,11.6
+P023,Project 23,Factory,Urban,Standard,7996,3,0,Shallow,RC,145,Lump Sum,2021,Rainy,Open,5,253,2593,188239,3487,178,49,4295000,153515204,19199.0,30,30,6.5
+P024,Project 24,High-rise,Downtown,Premium,7470,12,2,Pile,Steel,171,Lump Sum,2020,Rainy,Tight,17,361,2684,191043,3900,193,114,5570000,130739940,17502.0,45,75,13.9
+P025,Project 25,Home,Suburban,Premium,5515,4,1,Raft,RC,772,Unit Price,2024,Rainy,Open,10,160,1830,135915,2559,85,40,2300000,31104600,5640.0,0,0,7.3
