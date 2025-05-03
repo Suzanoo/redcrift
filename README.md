@@ -1,11 +1,11 @@
-# Redcrift ML Prediction Dashboard
+# Redcrift ML Prediction Dashboard : 
 
-A Shiny web application for exploratory data analysis, training machine learning models, and making predictions on construction project cost per m².
+A Shiny web application for exploratory data analysis, training machine learning models, and making predictions on construction data.
 
 ## 🔧 Features
 - Upload your dataset or use the default sample data.
 - Explore data through tables, summaries, histograms, and correlation plots.
-- Train multiple ML models (Linear Regression, SVM, Random Forest) with cross-validation.
+- Train multiple ML models (Linear Regression, SVM, Random Forest, XGB, KNN) with cross-validation.
 - Customize model parameters.
 - Download trained models in `.rds` format.
 - Upload a trained model and make predictions from custom input forms.
@@ -15,6 +15,8 @@ A Shiny web application for exploratory data analysis, training machine learning
 project/
 │
 ├── app.R                 # Main Shiny app (UI and server)
+├── ui.R                  # UI
+├── server.R              # Server
 ├── utils.R               # Utility functions (label_encode, corr_plot, etc.)
 ├── data/
 │   └── construction_data.csv  # Default dataset
@@ -23,8 +25,8 @@ project/
 ## 🚀 How to Run
 1. Clone the repository
 ```bash
-git clone https://github.com/yourname/redcrift-dashboard.git
-cd redcrift-dashboard
+git clone https://github.com/suzanoo/redcrift.git
+cd <project>
 ```
 2. Install dependencies in R:
 ```r
@@ -39,7 +41,7 @@ shiny::runApp(".")
 ## 📈 Model Training
 - Choose feature and outcome variables.
 - Select ML algorithms.
-- Customize parameters (SVM: Sigma/C, RF: mtry).
+- Customize parameters (SVM: Sigma/C, RF: mtry, ...).
 - Evaluate performance (RMSE, R², MAE).
 
 ## 🧠 Prediction Module

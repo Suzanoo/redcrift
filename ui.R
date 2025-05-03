@@ -13,7 +13,7 @@ ui <- dashboardPage(
   ),
   dashboardBody(
     tabItems(
-      # Page 1: Data
+      # ---------- Page 1: Data ---------
       tabItem(tabName = "data",
               tabPanel("Data",
                        sidebarLayout(
@@ -71,90 +71,86 @@ ui <- dashboardPage(
               ),
       ),
       
-      # Page 2: Model
+      # ---------- Page 2: Model ----------
       tabItem(tabName = "train_model",
               fluidPage(
-                tabsetPanel(
-                  tabPanel("Initial",
-                           h3("Select features and outcome"),      
-                           fluidRow(
-                             column(6,
-                                    shinyWidgets::pickerInput("model_outcome", "Select Outcome Column", 
-                                                              choices = NULL, multiple = FALSE),
-                                    shinyWidgets::pickerInput("model_features", "Select Feature Columns", 
-                                                              choices = NULL, multiple = TRUE,
-                                                              options = list(`actions-box` = TRUE)
-                                    )
-                             )
-                           )
-                  ),
-                  tabPanel(
-                    "Algorythm",
-                    h3("Train Predictive Model"),
-                    fluidRow(
-                      column(6,
-                             shinyWidgets::pickerInput("model_types", "Select Model(s)", 
-                                                       choices = c("Linear Regression" = "lm",
-                                                                   "Support Vector Machine" = "svmRadial",
-                                                                   "Random Forest" = "rf",
-                                                                   "Extreme Gradient Boosting" = "xgbTree",
-                                                                   "k-Nearest Neighbors" = "knn"
-                                                                   ),
-                                                       multiple = TRUE),
-                             sliderInput("train_percent", "Training Data (%)", 
-                                         min = 50, max = 90, value = 80, step = 5)
-                      ),
-                      column(6,
-                             # SVM Hyperparameters
-                             conditionalPanel(
-                               condition = "input.model_types.includes('svmRadial')",
-                               numericInput("svm_sigma", "SVM: Sigma", value = 0.1, min = 0.001, step = 0.01),
-                               numericInput("svm_C", "SVM: Cost (C)", value = 1, min = 0.1, step = 0.1)
-                             ),
-                             # RF Hyperparameters
-                             conditionalPanel(
-                               condition = "input.model_types.includes('rf')",
-                               numericInput("rf_mtry", "Random Forest: mtry", value = 2, min = 1, step = 1)
-                             ),
-                             # XGBoost Hyperparameters
-                             conditionalPanel(
-                               condition = "input.model_types.includes('xgbTree')",
-                               numericInput("xgb_nrounds", "XGBoost: nrounds", value = 100, min = 10),
-                               numericInput("xgb_eta", "XGBoost: eta (learning rate)", value = 0.1, min = 0.01, step = 0.01)
-                             ),
-                             # k-NN Hyperparameter
-                             conditionalPanel(
-                               condition = "input.model_types.includes('knn')",
-                               numericInput("knn_k", "KNN: k", value = 5, min = 1)
-                             ),
-                             
-                             br(),
-                             actionButton("train_model_btn", "Train Model", icon = icon("play"), class = "btn-success")
-                      )
-                    ),
-                    hr(),
-                    h4("Model Performance"),
-                    verbatimTextOutput("model_results"),
-                    
-                    hr(),
-                    fluidRow(
-                      column(6,
-                             uiOutput("model_selector")
-                      ),
-                      column(6,
-                             downloadButton("download_model", "Download Selected Model")
-                      )
-                    )
+                h3("Select features and outcome"),      
+                fluidRow(
+                  column(6,
+                         shinyWidgets::pickerInput("model_outcome", "Select Outcome Column", 
+                                                   choices = NULL, multiple = FALSE),
+                         shinyWidgets::pickerInput("model_features", "Select Feature Columns", 
+                                                   choices = NULL, multiple = TRUE,
+                                                   options = list(`actions-box` = TRUE)
+                         )
                   )
-                 
+                ),
+                h3("Train Predictive Model"),
+                fluidRow(
+                  column(6,
+                         shinyWidgets::pickerInput("model_types", "Select Model(s)", 
+                                                   choices = c("Linear Regression" = "lm",
+                                                               "Support Vector Machine" = "svmRadial",
+                                                               "Random Forest" = "rf",
+                                                               "Extreme Gradient Boosting" = "xgbTree",
+                                                               "k-Nearest Neighbors" = "knn"
+                                                   ),
+                                                   multiple = TRUE),
+                         sliderInput("train_percent", "Training Data (%)", 
+                                     min = 50, max = 90, value = 80, step = 5)
+                  ),
+                  column(6,
+                         # SVM Hyperparameters
+                         conditionalPanel(
+                           condition = "input.model_types.includes('svmRadial')",
+                           numericInput("svm_sigma", "SVM: Sigma", value = 0.1, min = 0.001, step = 0.01),
+                           numericInput("svm_C", "SVM: Cost (C)", value = 1, min = 0.1, step = 0.1)
+                         ),
+                         # RF Hyperparameters
+                         conditionalPanel(
+                           condition = "input.model_types.includes('rf')",
+                           numericInput("rf_mtry", "Random Forest: mtry", value = 2, min = 1, step = 1)
+                         ),
+                         # XGBoost Hyperparameters
+                         conditionalPanel(
+                           condition = "input.model_types.includes('xgbTree')",
+                           numericInput("xgb_nrounds", "XGBoost: nrounds", value = 100, min = 10),
+                           numericInput("xgb_eta", "XGBoost: eta (learning rate)", value = 0.1, min = 0.01, step = 0.01)
+                         ),
+                         conditionalPanel(
+                           condition = "input.model_types.includes('xgbTree')",
+                           numericInput("xgb_nrounds", "XGBoost: nrounds", value = 100, min = 10),
+                           numericInput("xgb_eta", "XGBoost: eta (learning rate)", value = 0.1, min = 0.01, step = 0.01),
+                           numericInput("xgb_maxdepth", "XGBoost: max_depth", value = 3, min = 1),
+                           sliderInput("xgb_iterations", "Trees used in prediction (iteration_range)", min = 1, max = 100, value = 100)
+                         ),
+                         # k-NN Hyperparameter
+                         conditionalPanel(
+                           condition = "input.model_types.includes('knn')",
+                           numericInput("knn_k", "KNN: k", value = 5, min = 1)
+                         ),
+                         
+                         br(),
+                         actionButton("train_model_btn", "Train Model", icon = icon("play"), class = "btn-success")
+                  )
+                ),
+                hr(),
+                h4("Model Performance"),
+                verbatimTextOutput("model_results"),
+                
+                hr(),
+                fluidRow(
+                  column(6,
+                         uiOutput("model_selector")
+                  ),
+                  column(6,
+                         downloadButton("download_model", "Download Selected Model")
+                  )
                 )
-                
-                
               )
-              
       ),
       
-      # Page 3: Prediction
+      # ---------- Page 3: Prediction ----------
       tabItem(tabName = "predict",
               fluidRow(
                 box(

@@ -1,4 +1,6 @@
-library(shiny)
+library(readr)
+library(shinyjs)
+library(dplyr)
 library(caret)
 library(DT)
 library(ggplot2)
@@ -8,24 +10,7 @@ source("utils.R")
 
 # --------------------- Default --------------------- 
 # Read and clean the data
-data <- read_csv("data/construction_data.csv")
-
-
-# Define feature columns and outcome
-feature_cols <- c(
-  "Type", "LocationType", "LuxuryLevel", "TotalFloorArea_m2",
-  "NumberOfFloors", "NumberOfBasements", "FoundationType",
-  "StructureType", "DurationDays", "ContractType",
-  "StartYear", "SeasonStart", "AccessCondition"
-)
-
-
-outcome_col <- "UnitCostPer_m2_THB"
-
-
-# Keep only features and outcome in data
-default_df <- data %>%
-  select(all_of(c(feature_cols, outcome_col)))
+default_df <- read_csv("data/construction_data.csv")
 
 
 # --------------------- Server Logic --------------------- 
@@ -33,7 +18,6 @@ default_df <- data %>%
 server <- function(input, output, session) {
   
   # --------------------- Predict  page ---------------------
-  
   input_values <- reactiveValues(history = data.frame())
   
   # Store uploaded model and extracted metadata
@@ -183,7 +167,7 @@ server <- function(input, output, session) {
   
   # Enable/Disable the actionButton
   observe({
-    toggleState("plot_corr", !is.null(input$selected_features) && length(input$selected_features) > 1)
+    shinyjs::toggleState("plot_corr", !is.null(input$selected_features) && length(input$selected_features) > 1)
   })
   
   
@@ -226,7 +210,6 @@ server <- function(input, output, session) {
   })
   
   
-  ## ----- ML -----
   # Store trained models
   trained_models <- reactiveVal(list())
   model_metrics <- reactiveVal(data.frame())
@@ -266,7 +249,7 @@ server <- function(input, output, session) {
           tuneGrid <- expand.grid(sigma = input$svm_sigma, C = input$svm_C)
           
         }
-        if (method == "xgbTree") {
+        else if (method == "xgbTree") {
           tuneGrid <- expand.grid(nrounds = input$xgb_nrounds,
                                   eta = input$xgb_eta,
                                   max_depth = 6, gamma = 0,
@@ -274,7 +257,7 @@ server <- function(input, output, session) {
                                   min_child_weight = 1,
                                   subsample = 0.8)
         }
-        if (method == "knn") {
+        else if (method == "knn") {
           tuneGrid <- expand.grid(k = input$knn_k)
           
         }
@@ -282,6 +265,7 @@ server <- function(input, output, session) {
           tuneGrid <- expand.grid(mtry = input$rf_mtry)
           
         }
+
         
         model <- caret::train(form, data = train_df, method = method,
                               trControl = ctrl,
