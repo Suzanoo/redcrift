@@ -1,35 +1,60 @@
-# 🏗️ Construction Cost Prediction Dashboard
+# Redcrift ML Prediction Dashboard
 
-This Shiny web application helps you analyze construction project data, train custom machine learning models, and predict construction unit cost per square meter. It provides an intuitive interface for data upload, exploration, model training, and making predictions using saved models.
+A Shiny web application for exploratory data analysis, training machine learning models, and making predictions on construction project cost per m².
 
-## 🚀 Features
+## 🔧 Features
+- Upload your dataset or use the default sample data.
+- Explore data through tables, summaries, histograms, and correlation plots.
+- Train multiple ML models (Linear Regression, SVM, Random Forest) with cross-validation.
+- Customize model parameters.
+- Download trained models in `.rds` format.
+- Upload a trained model and make predictions from custom input forms.
 
-- 📂 **Data Page**:
-  - Upload your custom dataset (CSV).
-  - Explore correlation or pairwise plots based on selected features.
-  - View data summary and basic statistics.
+## 📁 Project Structure
+```
+project/
+│
+├── app.R                 # Main Shiny app (UI and server)
+├── utils.R               # Utility functions (label_encode, corr_plot, etc.)
+├── data/
+│   └── construction_data.csv  # Default dataset
+```
 
-- 🧠 **Model Page**:
-  - Select features and outcome column.
-  - Choose models: Linear Regression, SVM, XGBoost.
-  - Customize hyperparameters (train-test split, tune length).
-  - View training performance and download trained models.
+## 🚀 How to Run
+1. Clone the repository
+```bash
+git clone https://github.com/yourname/redcrift-dashboard.git
+cd redcrift-dashboard
+```
+2. Install dependencies in R:
+```r
+install.packages(c("shiny", "shinydashboard", "readr", "dplyr", "ggplot2", 
+                   "caret", "DT", "GGally", "shinyWidgets", "shinyjs"))
+```
+3. Run the app:
+```r
+shiny::runApp(".")
+```
 
-- 🔮 **Predict Page**:
-  - Upload a trained model file (`.rds`) from the Model page.
-  - Dynamic input form based on model features.
-  - Predict construction unit cost.
-  - See prediction history with scrollable output table.
+## 📈 Model Training
+- Choose feature and outcome variables.
+- Select ML algorithms.
+- Customize parameters (SVM: Sigma/C, RF: mtry).
+- Evaluate performance (RMSE, R², MAE).
+
+## 🧠 Prediction Module
+- Upload a previously trained model (`.rds`).
+- App auto-generates input UI based on required features.
+- Submit values to get predictions.
+- View history of all predictions made.
+
+## 📦 Model Compatibility
+- Ensure feature names/types match the training data.
+- You can use the same `label_encode()` logic in `utils.R` to preprocess prediction inputs.
+
+## ✅ To-Do
+- Add data validation for user-uploaded datasets.
+- Add automatic feature selection or model tuning (e.g., using `caret::train()` with `tuneLength`).
+- Add export to Excel/CSV for results.
 
 ---
-
-## 📦 Installation
-
-```r
-# Install required packages
-install.packages(c("shiny", "dplyr", "readr", "caret", "e1071", "xgboost", 
-                   "randomForest", "ggplot2", "GGally", "shinyWidgets", "DT"))
-
-# Run the app
-shiny::runApp("path_to_your_app_directory")
-

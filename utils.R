@@ -1,13 +1,3 @@
-options_created <- function(data) {
-  if (!is.null(data)) {
-    data %>%
-      as_tibble() %>%
-      setNames("key") %>%
-      mutate(text = data)
-  }
-}
-
-
 one_hot_encode <- function(data) {
   non_numeric_cols <- sapply(data, function(x) !is.numeric(x))
   non_numeric_data <- data[, non_numeric_cols]
@@ -38,6 +28,16 @@ label_encode <- function(data) {
   }
   
   return(encoded_data)
+}
+
+
+## correlation plot
+corr_plot <- function(data, label){
+  if(label == "CORR"){
+    data %>% GGally::ggcorr()
+  }else{
+    data %>% GGally::ggpairs()
+  }
 }
 
 
